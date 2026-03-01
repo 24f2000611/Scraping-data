@@ -1,0 +1,22 @@
+{
+  "name": "scraping-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/24f2000611/Scraping-data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/24f2000611/Scraping-data/issues"
+  },
+  "homepage": "https://github.com/24f2000611/Scraping-data#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.3"
+  }
+}
