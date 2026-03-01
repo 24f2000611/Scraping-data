@@ -1,0 +1,31 @@
+name: Scrape Table Sums
+
+on: [push]  # Runs on every push
+
+jobs:
+  scrape:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install 24f2000611@ds.study.iitm.ac.in  # Your email here!
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      
+      - name: Run scraper and log totals
+        run: npx playwright test
+      
+      - name: Upload test results  # Optional: For debugging
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
